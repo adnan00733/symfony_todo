@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}All Todos{% endblock %}
+
+{% block body %}
+{% if todosList %}
+    <div id="todos">
+        <ul class="list-group">
+            {% for todo in todosList %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">{{ todo.title }} 
+                    <span class="badge badge-primary badge-pill right">{{ todo.date_created }} 
+                        :: <a href="todo/view/{{ todo.id }}" class="text-white view-todo" title="View">View</a>
+                        :: <a href="todo/edit/{{ todo.id }}" class="text-white view-todo" title="Edit">Edit</a>
+                        ::<a href="javascript:;" class="text-white delete-todo" data-id="{{ todo.id }}" title="Delete">Delete</a></span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% else %}
+    <p>Todo list is empty.</p>
+{% endif %}
+{% endblock %}
+
+{% block javascripts %}
+  <script src="/js/main.js"></script>
+{% endblock %}
+

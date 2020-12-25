@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ todo.title }}{% endblock %}
+
+{% block body %}
+ <h1>{{ todo.title }}</h1>
+ <p>{{ todo.description }}</p>
+ <hr>
+ <a href="/todo">Go Back</a>
+{% endblock %}

@@ -1,0 +1,25 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+home_page:
+    path: /
+    controller: App\Controller\TodoController::index
+todo_list:
+    path: /todo
+    controller: App\Controller\TodoController::index
+add_todo:
+    path: /todo/add
+    controller: App\Controller\TodoController::add
+    methods: [GET,POST]
+delete_todo:
+    path: /todo/delete/{id}
+    controller: App\Controller\TodoController::delete
+    methods: [DELETE]
+view_todo:
+    path: /todo/view/{id}
+    controller: App\Controller\TodoController::view
+    methods: [GET]
+edit_todo:
+    path: /todo/edit/{id}
+    controller: App\Controller\TodoController::edit
+    methods: [GET,POST]
